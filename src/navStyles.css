@@ -1,0 +1,112 @@
+:root{
+    --fs-timer: 4rem;
+    --fs-h1: 2rem;
+    --fs-h2: 1.5rem;
+    --fs-body: 1rem;
+    --fs-mini: 0.8rem;
+  
+    --clr-light: #edf2f4;
+    --clr-dark: #0b090a;
+    --clr-accent: #a10c1e;
+  
+    --fw-reg: 400;
+    --fw-bold: 700;
+  }
+
+.nav{
+    position: fixed;
+    background: #0b090a6c;
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 50%;
+    transform: translateX(200%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:0;
+    padding:0;
+}
+
+.nav-link{
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: var(--clr-light)
+}
+.nav-toggle{
+    background-color: transparent;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.nav-open{
+    transform: translateX(100%);
+}
+
+.nav-open .nav-toggle{
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
+}
+
+.nav-open .hamburger::before{
+    transform: rotate(90deg) translateX(-10px);
+}
+
+.hamburger{
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    background: var(--clr-light);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+    z-index: 1500;
+}
+
+.hamburger::before,
+.hamburger::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before{
+    top: 10px;
+}
+
+.hamburger::after{
+    bottom: 10px;
+}

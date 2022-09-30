@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './App.css'
 import { Routes, Route, useLocation} from 'react-router-dom'
 import Routine from './Pages/Routine'
 import Timer from './Pages/Timer'
@@ -17,13 +16,21 @@ function App() {
   
   const location = useLocation()
 
-  
+  const [routineList, setRoutineList] = useState([]) //array of routines (so user can have multiple routines)
   const [routine, setRoutine] = useState(makeRoutineObj())
   
 
+  function addRoutineToList() {
+    setRoutineList(prevList => {
+      return [...prevList, routine]
+    })
+  }
+
+
+
+// Gets data from localStorage and adds the prepare item
   function makeRoutineObj() {
     const localStorageData = JSON.parse(localStorage.getItem('routine'))
-    console.log(localStorageData.some(e => e.name === "Prepare"))
     if(!localStorageData.some(e => e.name === "Prepare")){
       localStorageData.unshift(prepare)
       return localStorageData
@@ -31,7 +38,7 @@ function App() {
       return localStorageData
     }
   }
-
+// Allows items to be added to routine state
   function addRoutineItem(obj) {
     if(obj.name === "" || obj.duration === 0){
       alert('You must fill out the form')
@@ -41,21 +48,22 @@ function App() {
       return [...prevState, obj]
     })
   }
-
+// removes items from routine state
   function removeRoutineItem(id){
     setRoutine(prevState => {
       return prevState.filter(item => item.id !== id)
     })
   }
-
+// saves routine to localStorage
   function saveRoutine() {
     if(routine === null) return;
     localStorage.setItem('routine', JSON.stringify(routine))
   }
 
-  useEffect(() => {
-    saveRoutine()
-  }, [routine])
+  // useEffect(() => {
+  //   saveRoutine()
+  // }, [routine])
+
 
   return (
     <div className="app">

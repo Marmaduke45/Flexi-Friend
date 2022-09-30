@@ -217,6 +217,18 @@ p{
   color: rgba(0, 0, 0, 0.671)
 }
 
+.routine-selector{
+  margin: 20px auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  background-color: #0b090a;
+  color: var(--clr-light);
+  padding: 1em;
+  border-radius: 1em;
+}
+
 /* ----------- */
 /* --Queries-- */
 /* ----------- */
