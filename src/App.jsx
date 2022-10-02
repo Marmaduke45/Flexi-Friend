@@ -22,13 +22,14 @@ function App() {
   
 
   function makeRoutineObj() {
-    const localStorageData = JSON.parse(localStorage.getItem('routine'))
-    console.log(localStorageData.some(e => e.name === "Prepare"))
-    if(!localStorageData.some(e => e.name === "Prepare")){
-      localStorageData.unshift(prepare)
-      return localStorageData
-    }else{
-      return localStorageData
+    if(localStorage.getItem('routine') !== 'undefined'){
+      const localStorageData = JSON.parse(localStorage.getItem('routine'))
+      if(!localStorageData.some(e => e.name === "Prepare")){
+        localStorageData.unshift(prepare)
+        return localStorageData
+      }else{
+        return localStorageData
+      }
     }
   }
 
@@ -38,7 +39,17 @@ function App() {
       return;
     }
     setRoutine(prevState => {
-      return [...prevState, obj]
+      if(obj.isMirrored === true){
+        const nameR = `${obj.name} (R)`
+        const nameL = `${obj.name} (L)`
+        let objR = Object.assign({}, obj)
+        let objL = Object.assign({}, obj)
+        objR.name = nameR
+        objL.name = nameL
+        return [...prevState, objR, objL]
+      }else{
+        return [...prevState, obj]
+      }
     })
   }
 
