@@ -6,7 +6,7 @@ export default function Navbar(props) {
 
     return (
         <nav className='navbar'>
-            <img src={dumbellIcon} />
+            <img className='logo' src={dumbellIcon} />
             <Link className={`link ${props.selected.pathname === "/" ? "selected" : ""}`} to="/">Routine</Link>
             <Link className={`link ${props.selected.pathname === "/timer" ? "selected" : ""}`} to="/timer">Timer</Link>
         </nav>

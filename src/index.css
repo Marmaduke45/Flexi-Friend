@@ -35,8 +35,9 @@
 
 .app{
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   background-color: var(--clr-light);
+  overflow-x: hidden;
 }
 
 .btn{
@@ -97,6 +98,11 @@
 
 .btn:active{
   filter: brightness(0.7)
+}
+
+.logo{
+  width: 40px;
+  aspect-ratio: 1/1;
 }
 
 /* ----------- */
@@ -277,10 +283,6 @@ p{
     --fs-body: 1.2rem;
     --fs-mini: 1rem;
   }
-  
-  .app{
-    height: 100vh;
-  }
 
   .bottom-bar{
     flex-direction: row;
@@ -329,6 +331,10 @@ p{
 
   .hideOnBigScreen{
     display: none;
+  }
+
+  .logo{
+    width: 70px;
   }
 
 }
