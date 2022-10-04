@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
-import dumbellIcon from "../assets/dumbell Icon.png"
+import dumbellIcon from "../assets/dumbellIcon.png"
 
 export default function Navbar(props) {
 
