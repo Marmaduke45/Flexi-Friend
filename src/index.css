@@ -38,6 +38,7 @@
   height: 100vh;
   background-color: var(--clr-light);
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .btn{
@@ -84,7 +85,7 @@
 
 
 .number-input{
-  width: 100px;
+  width: 50px;
   text-align: center;
 }
 
@@ -152,6 +153,7 @@ p{
   width: 100vw;
   color: var(--clr-light);
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 2em;
 }
@@ -288,6 +290,10 @@ p{
     flex-direction: row;
   }
 
+  .navbar{
+    justify-content: flex-start;
+  }
+
   .form-container{
     flex-direction: row;
     align-items: center;
@@ -313,7 +319,7 @@ p{
   }
 
   .number-input{
-    width: 100px;
+    width: 80px;
   }
 
   .secondary-input-container{
@@ -335,6 +341,7 @@ p{
 
   .logo{
     width: 70px;
+    order: -1;
   }
 
 }
