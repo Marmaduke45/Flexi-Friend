@@ -77,7 +77,7 @@ export default function Timer(props) {
         <div className='timer-page'>
             {isRunning && <button onClick={startRoutine} className='btn start-routine-btn'>Start Routine</button>}
 
-           {timeLeft > -1 && !isRunning && isTimerActive && <h1 className='timer-text'>{currentSet.name}: {timeLeft}</h1>}
+           {timeLeft > -1 && !isRunning && isTimerActive && <h1 className='timer-text'>{currentSet.name}: <br className='hideOnBigScreen'></br> {timeLeft}</h1>}
 
            {!isRunning && !isTimerActive && <h1 className='timer-text'>4 Second Break</h1>}
 

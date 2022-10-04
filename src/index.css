@@ -6,6 +6,7 @@
 
 :root{
   --fs-timer: 3rem;
+  --fs-link: 2rem;
   --fs-h1: 2rem;
   --fs-h2: 1.5rem;
   --fs-body: 1rem;
@@ -34,7 +35,7 @@
 
 .app{
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-color: var(--clr-light);
 }
 
@@ -49,11 +50,12 @@
 
 .btn-large{
   font-size: var(--fs-h2);
+  
   width: 100%;
 }
 
 .btn-small{
-  font-size: var(--fs-mini);
+  font-size: var(--fs-body);
   background-color: var(--clr-accent);
   color: var(--clr-light);
   border: none;
@@ -121,7 +123,7 @@ p{
 }
 
 .link{
-  font-size: var(--fs-h1);
+  font-size: var(--fs-link);
   font-weight: var(--fw-bold);
   color: var(--clr-light);
   text-decoration: none;
@@ -232,7 +234,9 @@ p{
 }
 
 .secondary-input-container{
+  height: 55px;
   display: flex;
+  justify-content: space-evenly;
   width: 100%;
   gap: 1em;
 }
@@ -250,33 +254,33 @@ p{
 
 .check-label {
   font-size: var(--fs-h2);
+  text-align: left;
   font-weight: bold;
   line-height: 1.1;
-  display: flex;
-  align-self: center;
-  gap: 0.5em;
   user-select: none;
+  max-width: 150px;
 }
 
-input[type=checkbox] {
-  padding: 5em;
-  width: 50px;
+.checkbox{
+  min-width: 50px;
 }
-
 
 /* ----------- */
 /* --Queries-- */
 /* ----------- */
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   :root{
     --fs-timer: 4rem;
-    --fs-h1: 3rem;
-    --fs-h2: 2rem;
+    --fs-h1: 2.5rem;
+    --fs-h2: 1.5rem;
     --fs-body: 1.2rem;
     --fs-mini: 1rem;
   }
-
+  
+  .app{
+    height: 100vh;
+  }
 
   .bottom-bar{
     flex-direction: row;
@@ -298,6 +302,14 @@ input[type=checkbox] {
     width: 50%
   }
 
+  .checkbox{
+    width: 100px;
+  }
+
+  .check-label{
+    max-width: 300px;
+  }
+
   .number-input{
     width: 100px;
   }
@@ -308,14 +320,16 @@ input[type=checkbox] {
   
   .btn-large{
     font-size: var(--fs-h2);
-    width: 200px;
+    width: 300px;
   }
   
   .btn-small{
     font-size: var(--fs-body);
   }
 
-
+  .hideOnBigScreen{
+    display: none;
+  }
 
 }
 

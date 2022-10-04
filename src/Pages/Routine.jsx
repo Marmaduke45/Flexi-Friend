@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import RoutineItem from '../Components/Routine-Item'
 import { nanoid } from 'nanoid'
 import upArrowIcon from "../assets/upArrow.png"
@@ -14,7 +14,8 @@ export default function Routine(props) {
         id: ""
     })
     const [isHidden, setIsHidden] = useState(false)
-    
+
+
 // Handles form changes with 
     function handleChange(e) {
         const {name, value, type, checked} = e.target
@@ -96,21 +97,19 @@ export default function Routine(props) {
                                 onChange={handleChange}
                                 name="units"
                             >
-                                <option value="seconds">Seconds</option>
-                                <option value="minutes">Minutes</option>
+                                <option value="seconds">Secs</option>
+                                <option value="minutes">Mins</option>
                                 {/* <option value="reps">Reps</option> */}
                             </select>
-                            <label className='check-label'>
-                                <input
-                                    className='checkbox'
-                                    type="checkbox"
-                                    name="isMirrored"
-                                    id="isMirrored"
-                                    checked={formData.isMirrored}
-                                    onChange={handleChange}
-                                />
-                                Mirror left and right
-                            </label>
+                            <input
+                                className='checkbox'
+                                type="checkbox"
+                                name="isMirrored"
+                                id="isMirrored"
+                                checked={formData.isMirrored}
+                                onChange={handleChange}
+                            />
+                            <label htmlFor='isMirrored' className='check-label'>Mirror left and right</label>
                         </div>
                         <button onClick={() => addItem(formData)} className='add-item btn-large btn'>Add Item</button>
                     </form>
