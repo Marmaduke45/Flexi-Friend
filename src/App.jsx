@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './App.css'
 import { Routes, Route, useLocation} from 'react-router-dom'
 import Routine from './Pages/Routine'
 import Timer from './Pages/Timer'
@@ -22,14 +21,17 @@ function App() {
   
 
   function makeRoutineObj() {
-    if(localStorage.getItem('routine') !== 'undefined'){
+    if(localStorage.getItem('routine')){
       const localStorageData = JSON.parse(localStorage.getItem('routine'))
+      console.log(localStorageData)
       if(!localStorageData.some(e => e.name === "Prepare")){
         localStorageData.unshift(prepare)
         return localStorageData
       }else{
         return localStorageData
       }
+    }else{
+      return [prepare]
     }
   }
 
