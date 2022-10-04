@@ -22,7 +22,7 @@ export default function RoutineItem(props) {
 
     return(
         <li className="routine-item">
-            <h3>{props.name}</h3>
+            <p className="bold">{props.name}</p>
             <p>{props.duration} {unit}</p>
             <button onClick={() => props.removeRoutineItem(props.id)} className="btn btn-small remove-item">remove item</button>
         </li>
