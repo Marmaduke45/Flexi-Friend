@@ -125,6 +125,9 @@ p{
   border-bottom: 2px solid #edf2f4cc;
 }
 
+.timer-num{
+  font-size: 7rem;
+}
 
 /* ----------- */
 /* --Specific- */
@@ -261,6 +264,13 @@ p{
     font-size: var(--fs-body);
   }
 
+<<<<<<< Updated upstream
 
+=======
+  .logo{
+    width: 70px;
+    order: -1;
+  }
+>>>>>>> Stashed changes
 
 }

@@ -77,7 +77,11 @@ export default function Timer(props) {
         <div className='timer-page'>
             {isRunning && <button onClick={startRoutine} className='btn start-routine-btn'>Start Routine</button>}
 
+<<<<<<< Updated upstream
            {timeLeft > -1 && !isRunning && isTimerActive && <h1 className='timer-text'>{currentSet.name}: {timeLeft}</h1>}
+=======
+           {timeLeft > -1 && !isRunning && isTimerActive && <h1 className='timer-text'>{currentSet.name}: <br></br><span className='timer-num'>{timeLeft}</span></h1>}
+>>>>>>> Stashed changes
 
            {!isRunning && !isTimerActive && <h1 className='timer-text'>4 Second Break</h1>}
 
